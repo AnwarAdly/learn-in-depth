@@ -1,0 +1,10 @@
+17:36:11 **** Incremental Build of configuration Debug for project Q2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Q2.o "..\\Q2.c" 
+..\Q2.c:17:6: warning: return type of 'main' is not 'int' [-Wmain]
+ void main(){
+      ^~~~
+gcc -o Q2.exe Q2.o 
+
+17:36:11 Build Finished (took 516ms)
+
