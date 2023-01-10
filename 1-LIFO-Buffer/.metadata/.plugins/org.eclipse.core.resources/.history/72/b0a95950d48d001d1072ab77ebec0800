@@ -1,0 +1,26 @@
+/*
+ * main.c
+ *
+ *  Created on: 6 Jan 2023
+ *      Author: DELL
+ */
+
+
+
+#include "stdio.h"
+#include "stdlib.h"
+#include "string.h"
+#include "conio.h"
+
+struct sData{
+	int ID;
+	char name[20];
+	float height;
+};
+
+struct student{
+	struct sData;
+	struct student* NextStudent;
+};
+
+struct student FirstStudent = NULL;

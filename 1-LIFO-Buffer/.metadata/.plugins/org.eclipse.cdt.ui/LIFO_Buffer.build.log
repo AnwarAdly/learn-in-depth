@@ -1,0 +1,18 @@
+15:32:50 **** Incremental Build of configuration Debug for project LIFO_Buffer ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o app.o "..\\app.c" 
+..\app.c:12:6: warning: return type of 'main' is not 'int' [-Wmain]
+ void main (void){
+      ^~~~
+..\app.c: In function 'main':
+..\app.c:21:29: warning: pointer targets in passing argument 2 of 'LIFO_pop' differ in signedness [-Wpointer-sign]
+   if (LIFO_pop(&Uart_Lifo , &temp)==LIFO_NO_ERROR)
+                             ^
+In file included from ..\app.c:9:0:
+..\LIFO.h:33:13: note: expected 'unsigned int *' but argument is of type 'int *'
+ LIFO_Status LIFO_pop (LIFO_buf_t* LIFO , unsigned int* item);
+             ^~~~~~~~
+gcc -o LIFO_Buffer.exe LIFO.o app.o 
+
+15:32:50 Build Finished (took 584ms)
+

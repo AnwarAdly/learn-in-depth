@@ -1,0 +1,34 @@
+/*
+ * CA.c
+ *
+ *  Created on: 9 Jan 2023
+ *      Author: DELL
+ */
+
+#include "CA.h"
+
+extern void (*CA_state)();
+
+unsigned int distance=0;
+unsigned int speed=0;
+unsigned int threshold=50;
+
+void US_distance(int d){
+	distance = d;
+	(distance<=threshold)? (CA_state = STATE(CA_waiting)) : (CA_state = STATE(CA_driving));
+	printf("US----distance=%d----->CA",distance);
+}
+
+STATE_define(CA_waiting){
+	CA_state_id = CA_waiting;
+	printf("CA_waiting state : distance = %d speed=%d \n",distance,speed);
+	speed=0;
+	DC_Motor(speed);
+}
+STATE_define(CA_driving){
+	CA_state_id = CA_driving;
+	printf("CA_driving state : distance = %d speed=%d \n",distance,speed);
+	speed=30;
+	DC_Motor(speed);
+}
+

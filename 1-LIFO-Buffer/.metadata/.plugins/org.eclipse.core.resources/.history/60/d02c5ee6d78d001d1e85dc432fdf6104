@@ -1,0 +1,55 @@
+/*
+ * main.c
+ *
+ *  Created on: 6 Jan 2023
+ *      Author: DELL
+ */
+
+
+
+#include "stdio.h"
+#include "stdlib.h"
+#include "string.h"
+#include "conio.h"
+
+struct sData{
+	int ID;
+	char name[20];
+	float height;
+};
+
+struct student{
+	struct sData student;
+	struct student* NextStudent;
+};
+
+struct student* FirstStudent = NULL;
+char temp[20];
+
+void Add_Student(){
+	struct student* NewStudent;
+	struct student* LastStudent;
+	if (FirstStudent == NULL){ //if list is empty so create the first node
+		NewStudent = (struct student*) malloc (sizeof(struct student));
+		FirstStudent = NewStudent;
+	}
+	else{ // if list have last nodes so first go to last node then add new node to others
+		LastStudent = FirstStudent ;
+		while (LastStudent->NextStudent)
+			LastStudent = LastStudent->NextStudent;
+		NewStudent = (struct student*) malloc (sizeof(struct student));
+		LastStudent->NextStudent=NewStudent;
+	}
+	//fill the new node
+	DPRINTF("\n Enter the ID : ");
+	gets(temp);
+	NewStudent->student.ID = atoi(temp);
+	DPRINTF("\n Enter student full name : ");
+	gets(NewStudent->student.name);
+	DPRINTF("\n Enter the height : ");
+	gets(temp);
+	NewStudent->student.height = atof(temp);
+	//set the next node to null
+	NewStudent->NextStudent = NULL;
+}
+

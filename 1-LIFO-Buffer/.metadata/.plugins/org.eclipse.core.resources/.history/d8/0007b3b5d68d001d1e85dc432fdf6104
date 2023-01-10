@@ -1,0 +1,37 @@
+/*
+ * main.c
+ *
+ *  Created on: 6 Jan 2023
+ *      Author: DELL
+ */
+
+
+
+#include "stdio.h"
+#include "stdlib.h"
+#include "string.h"
+#include "conio.h"
+
+struct sData{
+	int ID;
+	char name[20];
+	float height;
+};
+
+struct student{
+	struct sData;
+	struct student* NextStudent;
+};
+
+struct student* FirstStudent = NULL;
+
+void Add_Student(){
+	struct student* NewStudent;
+	if (FirstStudent == NULL){
+		NewStudent = (struct student*) malloc (sizeof(struct student));
+		FirstStudent = NewStudent;
+	}
+	else{
+
+	}
+}
