@@ -10,5 +10,6 @@ Contents :
 	Unit 1 : Introduction to embeddded systems & git commands.
 	Unit 2 : C (basics , arrays & string , functions , union & structure , preprocessor directives , pointers ).
 	Unit 3 : Embedded C (Labs compiled by bash scripting , compiling , debugging and makefile by myself not need to gui or ide).
+	Unit 4 : Data structure (Implementing LIFO and FIFO drivers , Student database project based on singular linked-list , Collision Avoidance project based on state 				   machine ).
 
 
